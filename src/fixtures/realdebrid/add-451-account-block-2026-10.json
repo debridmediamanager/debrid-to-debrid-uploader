@@ -1,0 +1,94 @@
+{
+  "description": "Real-Debrid addMagnet answers recorded on one RD account (the shared test account) on 2026-10-04/05, copied from the probe's raw logs zen:~/rd-limits/trigger.jsonl (rep 'et') and zen:~/rd-limits/refused.jsonl (rep 'r2'). Every 451 here is the same response a real refusal gives, yet each sequence ends with RD accepting adds again within seconds: the account was blocked, not the release. 'et' refuses Big Buck Bunny (dd8255ec) and the known-good controls alongside E.T. (65d1bb05), which r2 shows RD accepting two hours later. In r2 the control 1e7cef09, accepted by this account earlier the same night, is refused 5 s after c5c19c1c, i.e. it was fired into the block. See docs/providers/real-debrid.md section 9, 'Re-measured 2026-10-04/05'.",
+  "recording_notes": [
+    "kind: warm/control/precheck = a hash this account accepted earlier the same evening; fresh/refused = the hash under test; probe = the control the probe used to find the block's end.",
+    "body is RD's response with whitespace collapsed by the probe (' '.join(body.split())). The probe did not keep 201 bodies (it read the torrent id and deleted the torrent at once), so a 201 body is recorded as an empty string.",
+    "Every accepted torrent was deleted seconds after the add. No credentials are recorded."
+  ],
+  "sequences": {
+    "et": [
+      {
+        "at": "2026-10-04T22:52:40.4Z",
+        "kind": "warm",
+        "endpoint": "POST /torrents/addMagnet",
+        "hash": "67118aee50e6eead2b7df2ffc3bbdb7de949b350",
+        "status": 451,
+        "body": "{ \"error\": \"infringing_file\", \"error_code\": 35 }"
+      },
+      {
+        "at": "2026-10-04T22:53:00.5Z",
+        "kind": "warm",
+        "endpoint": "POST /torrents/addMagnet",
+        "hash": "dd8255ecdc7ca55fb0bbf81323d87062db1f6d1c",
+        "status": 451,
+        "body": "{ \"error\": \"infringing_file\", \"error_code\": 35 }"
+      },
+      {
+        "at": "2026-10-04T22:53:20.6Z",
+        "kind": "warm",
+        "endpoint": "POST /torrents/addMagnet",
+        "hash": "c525953a36fc2f11dd9798e3d1ed090c5d3b2b3f",
+        "status": 451,
+        "body": "{ \"error\": \"infringing_file\", \"error_code\": 35 }"
+      },
+      {
+        "at": "2026-10-04T22:53:40.8Z",
+        "kind": "refused",
+        "endpoint": "POST /torrents/addMagnet",
+        "hash": "65d1bb05a8064b21ff4359980564ef0691ae84ff",
+        "status": 451,
+        "body": "{ \"error\": \"infringing_file\", \"error_code\": 35 }"
+      },
+      {
+        "at": "2026-10-04T22:53:57.2Z",
+        "kind": "probe",
+        "endpoint": "POST /torrents/addMagnet",
+        "hash": "131772474646867c14c4bf7d42599f71f91f11ba",
+        "status": 201,
+        "body": ""
+      }
+    ],
+    "r2": [
+      {
+        "at": "2026-10-05T01:00:01.8Z",
+        "kind": "precheck",
+        "endpoint": "POST /torrents/addMagnet",
+        "hash": "c4680df4f1fc799b3357bab554570952ffad9d6f",
+        "status": 201,
+        "body": ""
+      },
+      {
+        "at": "2026-10-05T01:00:23.2Z",
+        "kind": "fresh",
+        "endpoint": "POST /torrents/addMagnet",
+        "hash": "65d1bb05a8064b21ff4359980564ef0691ae84ff",
+        "status": 201,
+        "body": ""
+      },
+      {
+        "at": "2026-10-05T01:00:42.0Z",
+        "kind": "fresh",
+        "endpoint": "POST /torrents/addMagnet",
+        "hash": "c5c19c1c8c8ddaa6f3094987cf71f96330025025",
+        "status": 451,
+        "body": "{ \"error\": \"infringing_file\", \"error_code\": 35 }"
+      },
+      {
+        "at": "2026-10-05T01:00:47.2Z",
+        "kind": "control",
+        "endpoint": "POST /torrents/addMagnet",
+        "hash": "1e7cef091547f8b1a709c3db84e23426cdac8b13",
+        "status": 451,
+        "body": "{ \"error\": \"infringing_file\", \"error_code\": 35 }"
+      },
+      {
+        "at": "2026-10-05T01:01:08.6Z",
+        "kind": "probe",
+        "endpoint": "POST /torrents/addMagnet",
+        "hash": "a8508e0cc1f574b771485ccbfca37ba7aa656cf4",
+        "status": 201,
+        "body": ""
+      }
+    ]
+  }
+}

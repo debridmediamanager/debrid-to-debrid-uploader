@@ -1,0 +1,115 @@
+{
+  "description": "Real-Debrid addMagnet answers from a retest on one dedicated RD account nothing else used (2026-10-13 22:22 to 2026-10-14 02:42 UTC): one sample hash a minute as a bare magnet, a known-good control (Big Buck Bunny, dd8255ec) 15 s after every 451, every 451'd hash re-added about an hour later (pass 2). control 201 means RD refused that release; control 451 means the whole account was refusing adds, and block_s is how long until the control was accepted again. 'name' releases carry one of RD's eleven filter tags and were refused in both passes with the account open (control 201). 'account' releases carry none; their 451s came with the account blocked. Copied from the probe's raw log retest.jsonl. Over the whole run RD refused 37 of 46 tagged titles in pass 1 and accepted 1 of those 37 in pass 2, against 9 of 30 untagged refused and 4 of those 9 accepted in pass 2.",
+  "releases": [
+    {
+      "hash": "62596472803a1dbd0d4218627e7560960f404ec1",
+      "title": "Una pelicula de Minecraft (2025) HDR 1080p AMZN WEBDL LAT - ZeiZ",
+      "kind": "account",
+      "adds": [
+        {
+          "t": "2026-10-13T22:41:35Z",
+          "code": 451,
+          "body": "{\n\t\"error\": \"infringing_file\",\n\t\"error_code\": 35\n}",
+          "control": 451,
+          "block_s": 36,
+          "block_cleared": true,
+          "pass": 1
+        },
+        {
+          "t": "2026-10-14T01:21:37Z",
+          "code": 451,
+          "body": "{\n\t\"error\": \"infringing_file\",\n\t\"error_code\": 35\n}",
+          "control": 451,
+          "block_s": 56,
+          "block_cleared": true,
+          "pass": 2
+        }
+      ]
+    },
+    {
+      "hash": "76c781c8b8ebb342272f8cbfc97869eb313f2b56",
+      "title": "The Naked Gun 2025 FullHD 1080p.H264 HDR Ita Eng AC3 5.1 Multisub realDMDJ.mkv",
+      "kind": "account",
+      "adds": [
+        {
+          "t": "2026-10-13T22:50:24Z",
+          "code": 451,
+          "body": "{\n\t\"error\": \"infringing_file\",\n\t\"error_code\": 35\n}",
+          "control": 451,
+          "block_s": 56,
+          "block_cleared": true,
+          "pass": 1
+        },
+        {
+          "t": "2026-10-14T01:30:30Z",
+          "code": 201,
+          "body": "{\n\t\"id\": \"YW7DDBDCRW2JI\",\n\t\"uri\": \"https:\\/\\/api.real-debrid.com\\/rest\\/1.0\\/torrents\\/info\\/YW7DDBDCRW2JI\"\n}",
+          "pass": 2
+        }
+      ]
+    },
+    {
+      "hash": "27a7302032ce7e37d1927ab29f0de203b3a6b7df",
+      "title": "Jurassic.World.Rebirth.2025.READ.NFO.2160p.MA.WEB-DL.DD+5.1.Atmos.H.265.Hun.Eng-Winner",
+      "kind": "name",
+      "adds": [
+        {
+          "t": "2026-10-13T23:07:38Z",
+          "code": 451,
+          "body": "{\n\t\"error\": \"infringing_file\",\n\t\"error_code\": 35\n}",
+          "control": 201,
+          "pass": 1
+        },
+        {
+          "t": "2026-10-14T01:37:58Z",
+          "code": 451,
+          "body": "{\n\t\"error\": \"infringing_file\",\n\t\"error_code\": 35\n}",
+          "control": 201,
+          "pass": 2
+        }
+      ]
+    },
+    {
+      "hash": "654fbcea49c519ee3219055590be3f41b787cfad",
+      "title": "Companion.2025.2160p.WEB-DL.DDP5.1.SDR.H265.mkv",
+      "kind": "name",
+      "adds": [
+        {
+          "t": "2026-10-13T23:31:42Z",
+          "code": 451,
+          "body": "{\n\t\"error\": \"infringing_file\",\n\t\"error_code\": 35\n}",
+          "control": 201,
+          "pass": 1
+        },
+        {
+          "t": "2026-10-14T01:57:34Z",
+          "code": 451,
+          "body": "{\n\t\"error\": \"infringing_file\",\n\t\"error_code\": 35\n}",
+          "control": 201,
+          "pass": 2
+        }
+      ]
+    },
+    {
+      "hash": "f7e66f8664e10b1cda04e985df35abb20ed93a28",
+      "title": "Superman 2025 2160p WEB-DL H265 SDR DDP Atmos 5 1 English HONE",
+      "kind": "name",
+      "adds": [
+        {
+          "t": "2026-10-14T00:04:23Z",
+          "code": 451,
+          "body": "{\n\t\"error\": \"infringing_file\",\n\t\"error_code\": 35\n}",
+          "control": 201,
+          "pass": 1
+        },
+        {
+          "t": "2026-10-14T02:19:03Z",
+          "code": 451,
+          "body": "{\n\t\"error\": \"infringing_file\",\n\t\"error_code\": 35\n}",
+          "control": 201,
+          "pass": 2
+        }
+      ]
+    }
+  ]
+}

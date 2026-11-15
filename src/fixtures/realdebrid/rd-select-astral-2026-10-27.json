@@ -1,0 +1,158 @@
+{
+  "description": "Real-Debrid selectFiles on fresh single-file and multi-file webseed torrents (random 50 MiB pieces, unreachable url-list) on an RD test account, 2026-10-27; each added, selected with every file id, polled 6x3 s, deleted. selectFiles answered 204 every time, yet a file whose path holds a character outside the Basic Multilingual Plane (4-byte UTF-8: emoji, math letters) stays selected=0 and the torrent stays waiting_files_selection; BMP symbols (gear, star, variation selector) select fine, and an astral character in a multi-file root name does no harm. The first pair is production job d27e460f (card 374): TorBox's name for 6b03d4b4 was a Torrentio title, and the name our rewrite gave RD is the second entry.",
+  "production_job": {
+    "job": "d27e460f-9d75-4680-b5a3-7aa7e117ed4c",
+    "hash": "6b03d4b4af6937b77f06fe5a668b4e3f3e8b59b2",
+    "torbox_name": "Love Island S08E36 1080p WEB h264-SCONES\n👤 0 💾 1.98 GB ⚙️ EZTV",
+    "original_file": "Love.Island.S08E36.1080p.WEB.h264-SCONES[eztv.re].mkv",
+    "imdb_id": "tt8819906",
+    "rewritten_name": "Love Island S08E36 1080p WEB h264-SCONES 👤 0 💾 1.98 GB ⚙️ EZTV {imdb-tt8819906}.mkv",
+    "error": "RD waiting_files_selection stalled: no progress for 30 minutes"
+  },
+  "observations": [
+    {
+      "torrent_name": "Love Island S08E36 1080p WEB h264-SCONES {imdb-tt8819906}.mkv",
+      "rd_files": [
+        {
+          "path": "/Love Island S08E36 1080p WEB h264-SCONES {imdb-tt8819906}.mkv",
+          "selected": 1
+        }
+      ],
+      "selectFiles_http": 204,
+      "status_after_select": [
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading"
+      ]
+    },
+    {
+      "torrent_name": "Love Island S08E36 1080p WEB h264-SCONES 👤 0 💾 1.98 GB ⚙️ EZTV {imdb-tt8819906}.mkv",
+      "rd_files": [
+        {
+          "path": "/Love Island S08E36 1080p WEB h264-SCONES 👤 0 💾 1.98 GB ⚙️ EZTV {imdb-tt8819906}.mkv",
+          "selected": 0
+        }
+      ],
+      "selectFiles_http": 204,
+      "status_after_select": [
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection"
+      ]
+    },
+    {
+      "torrent_name": "Ctrl A 💾 B.mkv",
+      "rd_files": [
+        {
+          "path": "/Ctrl A 💾 B.mkv",
+          "selected": 0
+        }
+      ],
+      "selectFiles_http": 204,
+      "status_after_select": [
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection"
+      ]
+    },
+    {
+      "torrent_name": "Ctrl C ⚙️ D.mkv",
+      "rd_files": [
+        {
+          "path": "/Ctrl C ⚙️ D.mkv",
+          "selected": 1
+        }
+      ],
+      "selectFiles_http": 204,
+      "status_after_select": [
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading"
+      ]
+    },
+    {
+      "torrent_name": "Ctrl E ⭐ F.mkv",
+      "rd_files": [
+        {
+          "path": "/Ctrl E ⭐ F.mkv",
+          "selected": 1
+        }
+      ],
+      "selectFiles_http": 204,
+      "status_after_select": [
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading"
+      ]
+    },
+    {
+      "torrent_name": "Ctrl G 𝐀 H.mkv",
+      "rd_files": [
+        {
+          "path": "/Ctrl G 𝐀 H.mkv",
+          "selected": 0
+        }
+      ],
+      "selectFiles_http": 204,
+      "status_after_select": [
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection"
+      ]
+    },
+    {
+      "torrent_name": "Root 💾 dir",
+      "rd_files": [
+        {
+          "path": "/Plain File.mkv",
+          "selected": 1
+        }
+      ],
+      "selectFiles_http": 204,
+      "status_after_select": [
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading",
+        "downloading"
+      ]
+    },
+    {
+      "torrent_name": "Plain Root",
+      "rd_files": [
+        {
+          "path": "/File 💾 x.mkv",
+          "selected": 0
+        }
+      ],
+      "selectFiles_http": 204,
+      "status_after_select": [
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection",
+        "waiting_files_selection"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "description": "TorBox requestdl failures read from debrid02's journal (read-only; TorBox was not called). 'persistent' is one RD-destination job with TORBOX_UPSTREAM=cdn on 2026-10-24: both files minted at add, file 1 re-minted at the 45-minute TTL, then every later requestdl failed until the job ended 2.5 hours later, one call per RD range read. 'transient_at_add' is a single-file job on 2026-11-14 whose requestdl failed with DATABASE_ERROR right after a cached add and minted the same file 18 s after the add, with no job retry in between. Seconds are relative to the job's first event. Job ids, hashes, release names and keys are left out. The 504 body is TorBox's HTML error page, of which the journal kept only the first line.",
+  "bodies": {
+    "database_error": {
+      "status": 500,
+      "body": "{\"success\":false,\"error\":\"DATABASE_ERROR\",\"detail\":\"There was an error processing your request. Please try again later.\",\"data\":null}"
+    },
+    "auth_error": {
+      "status": 403,
+      "body": "{\"success\":false,\"error\":\"AUTH_ERROR\",\"detail\":\"An error occurred while verifying your token. Please try again.\",\"data\":null}"
+    },
+    "gateway_timeout": {
+      "status": 504,
+      "body": "<!DOCTYPE html>"
+    }
+  },
+  "persistent": {
+    "minted_at_s": [0, 0, 2702, 2702, 2703],
+    "first_failure_at_s": 5407,
+    "last_failure_at_s": 14353,
+    "failed_calls": 7783,
+    "database_error_calls": 7781,
+    "busiest_hour_calls": 3388
+  },
+  "transient_at_add": {
+    "database_error_at_s": [2, 16, 16],
+    "minted_at_s": 18
+  }
+}

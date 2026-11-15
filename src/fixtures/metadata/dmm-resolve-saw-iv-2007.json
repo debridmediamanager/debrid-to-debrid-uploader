@@ -1,0 +1,7 @@
+{
+  "match": { "imdbId": "tt0890870", "title": "Saw IV", "year": 2007, "type": "movie", "votes": 3 },
+  "confidence": "exact",
+  "candidates": [
+    { "imdbId": "tt0890870", "title": "Saw IV", "year": 2007, "type": "movie", "votes": 3 }
+  ]
+}

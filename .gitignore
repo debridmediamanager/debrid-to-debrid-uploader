@@ -1,0 +1,8 @@
+node_modules/
+data/
+downloads/
+.env
+coverage/
+.DS_Store
+.claude/
+patreon-post/
